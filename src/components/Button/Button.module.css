@@ -1,0 +1,75 @@
+.button {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  padding: 1rem 1.3rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  white-space: nowrap;
+  line-height: 1;
+
+  & span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.cta {
+  composes: button;
+  color: var(--color__gray--lightest);
+
+  &::before,
+  &::after {
+    content: "";
+    transition: opacity 0.2s ease-in-out;
+    background: var(--color__gradient--cta);
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &::after {
+    background: var(--color__gradient--hover);
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.outline {
+  padding: 0.25rem 1.5rem;
+  composes: button;
+  border: 0.18rem solid var(--color__secondary);
+  color: var(--color__secondary);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color__secondary);
+    color: var(--color__gray--lightest);
+  }
+}
+
+.outline-cta {
+  composes: outline;
+  color: var(--color__gray--dark);
+  border-color: var(--color__gray--dark);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color__gray--dark);
+    color: var(--color__gray--lightest);
+  }
+}

@@ -1,0 +1,33 @@
+.wrapper {
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section {
+  background-color: var(--color__gray--lightest);
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 0.5rem;
+
+  & button {
+    position: absolute;
+    right: 0;
+    top: -0.05rem;
+  }
+
+  & input {
+    padding-right: 4rem;
+  }
+}

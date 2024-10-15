@@ -1,0 +1,18 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  gap: 0.5rem;
+
+  & button {
+    font-size: var(--step--1);
+    padding: 0.2rem 1rem;
+  }
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

@@ -1,0 +1,35 @@
+.track {
+  height: 0.25rem;
+  background: var(--color__gray--light);
+  border-radius: 0.25rem;
+}
+
+.thumb {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  background: var(--color__gradient--cta);
+
+  &:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0.2rem 0.1rem var(--color__gray--darker);
+  }
+}
+
+.mark {
+  position: absolute;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 100%;
+  background: var(--color__gray--dark);
+}
+
+.value {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  line-height: 2rem;
+  font-weight: bold;
+  color: var(--color__gray--lightest);
+  font-size: var(--step--1);
+}

@@ -1,0 +1,11 @@
+.footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 0.2rem solid transparent;
+  border-image: var(--color__gradient--cta);
+  border-image-slice: 1;
+  margin-top: 2rem;
+}

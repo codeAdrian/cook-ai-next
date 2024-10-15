@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dompurify": "^3.1.7",
+    "marked": "^14.1.2",
+    "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.15"
+    "react-range": "^1.10.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.15"
   }

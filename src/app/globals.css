@@ -1,42 +1,95 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color__primary: #ff4e50;
+  --color__primary--darken: #e54648;
+
+  --color__secondary: #f39c12;
+  --color__secondary--darken: #da8c10;
+
+  --color__tertiary: #f8cf0a;
+  --color__tertiary--darken: #ae9418;
+
+  --color__gradient--cta: linear-gradient(
+    90deg,
+    var(--color__primary) 0%,
+    var(--color__secondary) 50%,
+    var(--color__tertiary) 100%
+  );
+
+  --color__gradient--hover: linear-gradient(
+    -90deg,
+    var(--color__primary) 0%,
+    var(--color__secondary) 50%,
+    var(--color__tertiary) 100%
+  );
+
+  --color__black: #000;
+  --color__gray--darker: #253536;
+  --color__gray--dark: #686868;
+  --color__gray--light: #898989;
+  --color__gray--lighter: #f4f4f4;
+  --color__gray--lightest: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1024,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  /* Step -2: 12.5px → 12.8px */
+  --step--2: clamp(0.7813rem, 0.7727rem + 0.0426vw, 0.8rem);
+  /* Step -1: 15px → 16px */
+  --step--1: clamp(0.9375rem, 0.9091rem + 0.142vw, 1rem);
+  /* Step 0: 18px → 20px */
+  --step-0: clamp(1.125rem, 1.0682rem + 0.2841vw, 1.25rem);
+  /* Step 1: 21.6px → 25px */
+  --step-1: clamp(1.35rem, 1.2534rem + 0.483vw, 1.5625rem);
+  /* Step 2: 25.92px → 31.25px */
+  --step-2: clamp(1.62rem, 1.4686rem + 0.7571vw, 1.9531rem);
+  /* Step 3: 31.104px → 39.0625px */
+  --step-3: clamp(1.944rem, 1.7179rem + 1.1305vw, 2.4414rem);
+  /* Step 4: 37.3248px → 48.8281px */
+  --step-4: clamp(2.3328rem, 2.006rem + 1.634vw, 3.0518rem);
+  /* Step 5: 44.7898px → 61.0352px */
+  --step-5: clamp(2.7994rem, 2.3378rem + 2.3076vw, 3.8147rem);
 }
 
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+  font-family: var(--font-primary);
   margin: 0;
+  background: var(--color__gradient--cta);
+  padding: 0.5rem;
+  font-size: var(--step-0);
+  font-weight: 500;
+  color: var(--color__gray--darker);
+}
+
+strong {
+  font-weight: 800;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--color__secondary);
+
+  &:hover {
+    color: var(--color__primary);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+main {
+  background-color: var(--color__gray--lighter);
+  padding: 1rem;
+  min-height: calc(100dvh - (2 * 0.5rem));
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 0.5rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 2rem;
   }
+}
+
+.stretch-and-center {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
