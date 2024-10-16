@@ -3,5 +3,5 @@ export const hasBrowserAi = () => {
     return undefined;
   }
 
-  return Boolean(window.ai?.languageModel ?? window.ai?.assistant);
+  return Boolean(self.ai?.languageModel ?? self.ai?.assistant);
 };

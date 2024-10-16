@@ -6,7 +6,7 @@ export const useLanguageModelSession = () => {
   const isSupported = hasBrowserAi();
 
   const createSession = useCallback(() => {
-    const assistant = window.ai?.languageModel ?? window.ai?.assistant;
+    const assistant = self.ai?.languageModel ?? self.ai?.assistant;
 
     assistant
       .capabilities()

@@ -13,7 +13,7 @@ const RangeInput = ({ value, setValue }) => {
       label="Select your value"
       step={1}
       min={1}
-      max={10}
+      max={8}
       values={[value]}
       onChange={handleChange}
       renderTrack={({ props, children }) => (

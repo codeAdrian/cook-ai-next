@@ -4,11 +4,13 @@ import React from "react";
 
 import StepError from "./StepError";
 import DOMPurify from "dompurify";
-import StepIngredients from "./StepIngredients";
+
 import { usePromptModelValues } from "@/contexts/PromptModelContext";
-import StepIntro from "./StepIntro";
 
 import styles from "./Steps.module.css";
+
+import StepLabels from "./StepLabels";
+import StepResult from "./StepResult";
 
 const Steps = () => {
   const { error } = usePromptModelValues();
@@ -23,7 +25,7 @@ const Steps = () => {
 
   return (
     <ul className={styles.list} role="list">
-      <StepIngredients />
+      <StepResult />
     </ul>
   );
 };

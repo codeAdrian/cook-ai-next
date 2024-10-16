@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import DOMPurify from "dompurify";
-import { marked } from "marked";
 import { useLanguageModelSession } from "./useLanguageModelSession";
 
 const PROMPT_STATE = {
@@ -27,7 +25,7 @@ export const usePromptModel = () => {
     try {
       const stream = await lmSession.promptStreaming(prompt);
       for await (const chunk of stream) {
-        setResponse(DOMPurify.sanitize(marked.parse(chunk.trim())));
+        setResponse(chunk.trim());
         setPromptState(PROMPT_STATE.idle);
       }
     } catch (error) {

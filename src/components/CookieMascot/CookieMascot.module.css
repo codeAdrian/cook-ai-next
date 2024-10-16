@@ -48,6 +48,10 @@
     display: none;
   }
 
+  & :global(.cookie_svg__mouth-concern) {
+    animation: sniffle 2.5s 0s ease-in-out infinite alternate;
+  }
+
   & :global(.cookie_svg__arms) {
     transform: scaleY(-1);
     transform-origin: 50% 63%;
@@ -81,6 +85,22 @@
   }
 }
 
+.happy {
+  composes: mascot;
+  animation: jump 0.7s 0s ease-in-out infinite alternate;
+
+  & :global(.cookie_svg__mouth-concern),
+  & :global(.cookie_svg__mouth-yummy),
+  & :global(.cookie_svg__mouth-default) {
+    display: none;
+  }
+
+  & :global(.cookie_svg__arms) {
+    animation: jump 0.7s 0s ease infinite alternate;
+    transform-origin: 70% 100%;
+  }
+}
+
 @keyframes wave {
   0% {
     transform: rotateZ(0);
@@ -88,6 +108,42 @@
 
   100% {
     transform: rotateZ(-5deg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-0.15rem);
+  }
+}
+
+@keyframes sniffle {
+  0% {
+    transform: translateY(0);
+  }
+
+  5% {
+    transform: translateY(-0.3rem);
+  }
+
+  10% {
+    transform: translateY(0);
+  }
+
+  15% {
+    transform: translateY(-0.2rem);
+  }
+
+  20% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 

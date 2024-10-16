@@ -46,7 +46,9 @@ const IngredientsPrompt = ({ handleSubmit }) => {
     <article className={styles.wrapper}>
       <section className={styles.section}>
         <div>
-          <label for="input-ingredient">Add your ingredients to the list</label>
+          <label htmlFor="input-ingredient">
+            Add your ingredients to the list
+          </label>
         </div>
         <form
           onClick={handleAddManual}
@@ -87,7 +89,7 @@ const IngredientsPrompt = ({ handleSubmit }) => {
             id="input-ingredients"
           />
           <input type="hidden" value={numberOfExtras} id="input-extras" />
-          <Button type="submit">Find me a perfect recipe!</Button>
+          <Button type="submit">Let&apos;s roll!</Button>
         </form>
       </section>
     </article>

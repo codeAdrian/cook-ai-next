@@ -1,0 +1,11 @@
+.recipe {
+  margin: 0 auto;
+  max-width: 80ch;
+  background-color: var(--color__gray--lightest);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 0.25rem;
+  border-image-source: var(--color__gradient--cta);
+}

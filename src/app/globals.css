@@ -26,6 +26,8 @@
   --color__gray--darker: #253536;
   --color__gray--dark: #686868;
   --color__gray--light: #898989;
+  --color__gray--button: #ccc;
+  --color__gray--button-hover: #bbb;
   --color__gray--lighter: #f4f4f4;
   --color__gray--lightest: #fff;
 }
@@ -92,4 +94,38 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  min-width: var(--step--1);
+  aspect-ratio: 1;
+  appearance: none;
+  border: 0.15rem solid var(--color__secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    display: block;
+    background: var(--color__secondary);
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    opacity: 0;
+  }
+
+  &:checked:after {
+    opacity: 1;
+  }
+}
+
+input[type="radio"] {
+  &,
+  &:after {
+    border-radius: 100%;
+  }
 }

@@ -5,9 +5,13 @@ import { Lobster, Outfit } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { PromptModelContextProvider } from "@/contexts/PromptModelContext";
 
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-primary" });
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "600", "800"],
+  variable: "--font-primary",
+});
 const lobster = Lobster({
-  weight: "400",
+  weight: ["400"],
   subsets: ["latin"],
   variable: "--font-cursive",
 });

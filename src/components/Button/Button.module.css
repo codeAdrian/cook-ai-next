@@ -48,6 +48,16 @@
   }
 }
 
+.secondary {
+  composes: button;
+  background-color: var(--color__gray--button);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color__gray--button-hover);
+  }
+}
+
 .outline {
   padding: 0.25rem 1.5rem;
   composes: button;

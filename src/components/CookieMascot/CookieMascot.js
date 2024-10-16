@@ -7,7 +7,7 @@ import { SpeechBubble } from "../SpeechBubble";
 const CookieMascot = ({ children, mood = "idle" }) => {
   return (
     <div className={styles.wrapper}>
-      <SpeechBubble>{children}</SpeechBubble>
+      {children && <SpeechBubble>{children}</SpeechBubble>}
       <CookieGraphic className={styles[mood]} />
     </div>
   );
