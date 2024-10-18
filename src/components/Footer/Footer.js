@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
-import styles from "./Footer.module.css";
+import styles from './Footer.module.css'
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>
-        Created with ❤️🧡💛 by{" "}
+        Created with ❤️🧡💛 by{' '}
         <a
           rel="noopener noreferrer"
           target="_blank"
@@ -16,7 +16,7 @@ const Footer = () => {
         </a>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

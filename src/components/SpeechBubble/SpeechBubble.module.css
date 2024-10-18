@@ -7,25 +7,41 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.25rem;
+  width: 100%;
+  word-break: break-word;
 
   & :global(.title) {
     font-family: var(--font-cursive);
     font-size: var(--step-2);
-    background: var(--color__gradient--cta);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--color__secondary);
     padding-right: 1rem;
+    margin-bottom: 0.25rem;
+    display: inline-block;
   }
 
-  & strong {
+  &:global(:not(:has(.formatted))) strong {
     background: var(--color__gradient--cta);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  & :global(.formatted) {
+    & p {
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    & ul,
+    & ol {
+      & li + li {
+        margin-top: 0.75rem;
+      }
+    }
   }
 
   &::after {
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     border-left: 1.2rem solid transparent;

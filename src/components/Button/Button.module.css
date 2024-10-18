@@ -9,6 +9,13 @@
   border-radius: 2rem;
   white-space: nowrap;
   line-height: 1;
+  user-select: none;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
   & span {
     position: relative;
@@ -22,7 +29,7 @@
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     transition: opacity 0.2s ease-in-out;
     background: var(--color__gradient--cta);
     z-index: 0;
@@ -63,7 +70,9 @@
   composes: button;
   border: 0.18rem solid var(--color__secondary);
   color: var(--color__secondary);
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 
   &:hover,
   &:focus-visible {

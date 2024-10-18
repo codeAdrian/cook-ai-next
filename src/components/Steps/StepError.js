@@ -1,5 +1,6 @@
-import React from "react";
-import { CookieMascot } from "../CookieMascot";
+import React from 'react'
+import { CookieMascot } from '../CookieMascot'
+import { Button } from '../Button'
 
 const StepError = ({ children }) => {
   if (children) {
@@ -11,8 +12,9 @@ const StepError = ({ children }) => {
           </div>
           {children}
         </div>
+        <Button onClick={() => window.location.reload()}>Try again</Button>
       </CookieMascot>
-    );
+    )
   }
 
   return (
@@ -22,14 +24,14 @@ const StepError = ({ children }) => {
           Sorry Chef, we&apos;re in a bit of a pickle.
         </div>
         but yer browser doesn&apos;t support the Prompt API. If you&apos;re on
-        Chrome, join the{" "}
+        Chrome, join the{' '}
         <a href="https://developer.chrome.com/docs/ai/built-in#get_an_early_preview">
           Early Preview Program
-        </a>{" "}
+        </a>{' '}
         to enable it.
       </div>
     </CookieMascot>
-  );
-};
+  )
+}
 
-export default StepError;
+export default StepError

@@ -1,20 +1,20 @@
-import "./normalize.css";
-import "./globals.css";
+import './normalize.css'
+import './globals.css'
 
-import { Lobster, Outfit } from "next/font/google";
-import { Footer } from "@/components/Footer";
-import { PromptModelContextProvider } from "@/contexts/PromptModelContext";
+import { Lobster, Outfit } from 'next/font/google'
+import { Footer } from '@/components/Footer'
+import { PromptModelContextProvider } from '@/contexts/PromptModelContext'
 
 const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "600", "800"],
-  variable: "--font-primary",
-});
+  subsets: ['latin'],
+  weight: ['400', '600', '800'],
+  variable: '--font-primary',
+})
 const lobster = Lobster({
-  weight: ["400"],
-  subsets: ["latin"],
-  variable: "--font-cursive",
-});
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-cursive',
+})
 
 export default function RootLayout({ children }) {
   return (
@@ -26,5 +26,5 @@ export default function RootLayout({ children }) {
         </main>
       </body>
     </html>
-  );
+  )
 }

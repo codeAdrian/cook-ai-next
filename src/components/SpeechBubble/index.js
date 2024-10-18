@@ -1,3 +1,3 @@
-import SpeechBubble from "./SpeechBubble";
+import SpeechBubble from './SpeechBubble'
 
-export { SpeechBubble };
+export { SpeechBubble }

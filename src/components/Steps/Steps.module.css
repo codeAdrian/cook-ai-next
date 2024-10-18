@@ -1,4 +1,12 @@
 .list {
   list-style: none;
   padding: 0;
+  max-width: var(--container__medium);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.listWide {
+  composes: list;
+  max-width: var(--container__large);
 }

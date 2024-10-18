@@ -1,10 +1,16 @@
 .wrapper {
-  max-width: 768px;
+  max-width: var(--container__medium);
   margin: 0 auto;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
   padding: 2rem;
   background-color: var(--color__gray--lightest);
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
 }
 
 .grid {
@@ -30,7 +36,7 @@
 .label {
   cursor: pointer;
   display: inline-flex;
-  align-items: flex-start;
+  align-items: baseline;
   flex-wrap: nowrap;
   gap: 0.5rem;
   user-select: none;
@@ -56,9 +62,4 @@
 .buttons {
   display: flex;
   gap: 0.5rem;
-  font-size: var(--step--1);
-
-  & button {
-    padding: 0.75rem 1rem;
-  }
 }

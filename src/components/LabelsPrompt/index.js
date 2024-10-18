@@ -1,3 +1,3 @@
-import LabelsPrompt from "./LabelsPrompt";
+import LabelsPrompt from './LabelsPrompt'
 
-export { LabelsPrompt };
+export { LabelsPrompt }

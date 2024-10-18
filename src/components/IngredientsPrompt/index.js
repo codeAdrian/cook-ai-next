@@ -1,3 +1,3 @@
-import IngredientsPrompt from "./IngredientsPrompt";
+import IngredientsPrompt from './IngredientsPrompt'
 
-export { IngredientsPrompt };
+export { IngredientsPrompt }

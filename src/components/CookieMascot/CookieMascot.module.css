@@ -2,9 +2,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
-  max-width: 60ch;
   margin: 0 auto;
 }
 
@@ -22,6 +21,7 @@
 .idle {
   composes: mascot;
   transform-origin: center center;
+  animation: wiggle 6s 0s var(--transition-bounce) infinite;
 
   & :global(.cookie_svg__mouth-concern),
   & :global(.cookie_svg__mouth-yummy),
@@ -87,7 +87,7 @@
 
 .happy {
   composes: mascot;
-  animation: jump 0.7s 0s ease-in-out infinite alternate;
+  animation: jump 3s 3s ease-in-out infinite alternate;
 
   & :global(.cookie_svg__mouth-concern),
   & :global(.cookie_svg__mouth-yummy),
@@ -96,7 +96,7 @@
   }
 
   & :global(.cookie_svg__arms) {
-    animation: jump 0.7s 0s ease infinite alternate;
+    animation: jump 3s 3s ease infinite alternate;
     transform-origin: 70% 100%;
   }
 }
@@ -116,8 +116,16 @@
     transform: translateY(0);
   }
 
+  10% {
+    transform: translateY(-1rem);
+  }
+
+  20% {
+    transform: translateY(0);
+  }
+
   100% {
-    transform: translateY(-0.15rem);
+    transform: translateY(0);
   }
 }
 
@@ -127,7 +135,7 @@
   }
 
   5% {
-    transform: translateY(-0.3rem);
+    transform: translateY(-0.2rem);
   }
 
   10% {
@@ -135,7 +143,7 @@
   }
 
   15% {
-    transform: translateY(-0.2rem);
+    transform: translateY(-0.15rem);
   }
 
   20% {

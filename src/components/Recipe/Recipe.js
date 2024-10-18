@@ -1,25 +1,18 @@
-import React from "react";
+import React from 'react'
 
-import styles from "./Recipe.module.css";
-import DOMPurify from "dompurify";
-import { marked } from "marked";
-import { Button } from "../Button";
+import styles from './Recipe.module.css'
+import DOMPurify from 'dompurify'
+import { marked } from 'marked'
 
-const Recipe = ({ response }) => {
+const Recipe = ({ response, isEditMode }) => {
   return (
-    <article className={styles.recipe}>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: DOMPurify.sanitize(marked.parse(response)),
-        }}
-      />
-      <hr />
-      <div>
-        <Button>Print</Button>
-        <Button>Edit ingredients</Button>
-      </div>
-    </article>
-  );
-};
+    <div
+      className={styles.recipe}
+      dangerouslySetInnerHTML={{
+        __html: DOMPurify.sanitize(marked.parse(response)),
+      }}
+    />
+  )
+}
 
-export default Recipe;
+export default Recipe

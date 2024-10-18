@@ -1,12 +1,12 @@
-import React from "react";
-import { Range } from "react-range";
+import React from 'react'
+import { Range } from 'react-range'
 
-import styles from "./RangeInput.module.css";
+import styles from './RangeInput.module.css'
 
 const RangeInput = ({ value, setValue }) => {
   const handleChange = (v) => {
-    setValue(v);
-  };
+    setValue(v)
+  }
 
   return (
     <Range
@@ -28,7 +28,7 @@ const RangeInput = ({ value, setValue }) => {
       )}
       renderMark={({ props }) => <span {...props} className={styles.mark} />}
     />
-  );
-};
+  )
+}
 
-export default RangeInput;
+export default RangeInput

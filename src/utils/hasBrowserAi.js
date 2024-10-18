@@ -1,7 +1,7 @@
 export const hasBrowserAi = () => {
-  if (typeof window === "undefined") {
-    return undefined;
+  if (typeof window === 'undefined') {
+    return undefined
   }
 
-  return Boolean(self.ai?.languageModel ?? self.ai?.assistant);
-};
+  return Boolean(self.ai?.languageModel)
+}

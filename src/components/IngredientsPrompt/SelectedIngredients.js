@@ -1,7 +1,7 @@
-import React from "react";
-import { Button } from "../Button";
+import React from 'react'
+import { Button } from '../Button'
 
-import styles from "./SelectedIngredients.module.css";
+import styles from './SelectedIngredients.module.css'
 
 const SelectedIngredients = ({
   removeIngredientFromList,
@@ -9,12 +9,12 @@ const SelectedIngredients = ({
   limit,
 }) => {
   const handleClick = (e) =>
-    removeIngredientFromList(parseInt(e.currentTarget.value));
+    removeIngredientFromList(parseInt(e.currentTarget.value))
 
   return (
     <div className={styles.wrapper}>
       <p>
-        Selected ingredients{" "}
+        Selected ingredients{' '}
         <small>
           <strong>({`${ingredients.length}/${limit}`})</strong>
         </small>
@@ -43,7 +43,7 @@ const SelectedIngredients = ({
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SelectedIngredients;
+export default SelectedIngredients

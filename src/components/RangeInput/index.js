@@ -1,3 +1,3 @@
-import RangeInput from "./RangeInput";
+import RangeInput from './RangeInput'
 
-export { RangeInput };
+export { RangeInput }

@@ -1,3 +1,3 @@
-import CookieMascot from "./CookieMascot";
+import CookieMascot from './CookieMascot'
 
-export { CookieMascot };
+export { CookieMascot }
