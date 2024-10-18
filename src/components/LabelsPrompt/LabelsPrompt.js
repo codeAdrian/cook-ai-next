@@ -10,7 +10,6 @@ const LabelsPrompt = ({ handleSubmit, values }) => {
       onSubmit={handleSubmit}
       autoComplete="false"
       className={styles.wrapper}
-      va
     >
       <div className={styles.section}>
         <article className={styles.grid}>

@@ -26,7 +26,9 @@ const RangeInput = ({ value, setValue }) => {
           <div className={styles.value}>{value}</div>
         </div>
       )}
-      renderMark={({ props }) => <span {...props} className={styles.mark} />}
+      renderMark={({ props: { key, ...props } }) => (
+        <span {...props} key={key} className={styles.mark} />
+      )}
     />
   )
 }

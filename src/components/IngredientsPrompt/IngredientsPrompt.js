@@ -58,7 +58,7 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
             className={styles.form}
           >
             <Input
-              maxlength={25}
+              maxLength={25}
               placeholder="Olive oil"
               type="text"
               id="input-ingredient"

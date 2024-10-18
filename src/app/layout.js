@@ -7,7 +7,7 @@ import { PromptModelContextProvider } from '@/contexts/PromptModelContext'
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '600', '800'],
+  weight: ['400', '800'],
   variable: '--font-primary',
 })
 const lobster = Lobster({
