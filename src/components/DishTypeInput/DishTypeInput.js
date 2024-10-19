@@ -1,8 +1,9 @@
 import React from 'react'
 
 import styles from './DishTypeInput.module.css'
-import { dishTypeOptions } from '@/constants/dishTypeOptions'
+
 import { Button } from '../Button'
+import { dishTypeOptions } from '@/constants/dishTypeOptions'
 
 const DishTypeInput = ({ values, onSubmit }) => {
   return (

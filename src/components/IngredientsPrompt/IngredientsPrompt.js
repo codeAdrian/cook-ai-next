@@ -59,7 +59,7 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
           >
             <Input
               maxLength={25}
-              placeholder="Olive oil"
+              placeholder="Cream cheese"
               type="text"
               id="input-ingredient"
               value={search}
