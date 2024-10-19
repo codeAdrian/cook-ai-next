@@ -50,7 +50,7 @@ const Suggestions = ({ input = '', values = [], addIngredientToList }) => {
 
   return (
     <div className={styles.wrap}>
-      <div>Or click to quick-add:</div>
+      <div>Or click to quick-add</div>
       <ul role="list" className={styles.list}>
         {suggestedIngredients.map((suggestion, index) => (
           <li key={`suggestion-${suggestion}-${index}`}>

@@ -14,6 +14,7 @@ import StepResult from './StepResult'
 import StepIntro from './StepIntro'
 import StepIngredients from './StepIngredients'
 import { StepsIndicator } from '../StepsIndicator'
+import { dishTypeOptions } from '@/constants/dishTypeOptions'
 
 const stepComponents = [StepIntro, StepIngredients, StepLabels, StepResult]
 
@@ -25,8 +26,9 @@ const Steps = () => {
   }
 
   const formValues = useRef({
+    dishType: dishTypeOptions[0].value,
     ingredients: '',
-    extraIngredients: '',
+    extraIngredients: 5,
     healthLabels: [],
     dietLabels: [],
   })

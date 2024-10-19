@@ -2,15 +2,31 @@
   max-width: var(--container__medium);
   margin: 0 auto;
   line-height: 1;
-  padding: 2rem 1rem;
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media screen and (min-width: 568px) {
+    padding: 2rem 0;
+  }
 }
 
 .list {
   list-style: none;
   padding: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--step-2);
+}
+
+.title {
+  font-size: var(--step-3);
+  background: var(--color__gradient--cta);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.2rem;
 }
 
 .item {

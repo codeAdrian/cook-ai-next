@@ -9,7 +9,11 @@
 
 .mascot {
   --transition-bounce: cubic-bezier(0.2, 0.7, 0.4, 1.65);
-  max-width: 20rem;
+  max-width: clamp(180px, 60vw, 20rem);
+
+  @media screen and (min-width: 480px) {
+    max-width: 20rem;
+  }
 
   & :global(.cookie_svg__eyes > path:nth-child(2n)) {
     animation: sparkle 0.15s 1s steps(2, jump-none) infinite alternate;
@@ -21,7 +25,6 @@
 .idle {
   composes: mascot;
   transform-origin: center center;
-  animation: wiggle 6s 0s var(--transition-bounce) infinite;
 
   & :global(.cookie_svg__mouth-concern),
   & :global(.cookie_svg__mouth-yummy),

@@ -13,7 +13,16 @@ const Footer = () => {
           href="https://x.com/AdrianBeceDev"
         >
           Adrian Bece
-        </a>
+        </a>{' '}
+        with{' '}
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://deepmind.google/technologies/gemini/nano/"
+        >
+          Gemini Nano&apos;s
+        </a>{' '}
+        Prompt API
       </div>
     </footer>
   )

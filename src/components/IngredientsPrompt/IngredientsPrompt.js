@@ -83,7 +83,7 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
       </div>
 
       <section className={styles.section}>
-        <label>Extra ingredients</label>
+        <label>Additional ingredients</label>
         <RangeInput value={numberOfExtras} setValue={setNumberOfExtras} />
       </section>
 

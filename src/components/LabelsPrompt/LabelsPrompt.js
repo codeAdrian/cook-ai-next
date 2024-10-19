@@ -14,7 +14,7 @@ const LabelsPrompt = ({ handleSubmit, values }) => {
       <div className={styles.section}>
         <article className={styles.grid}>
           <section>
-            <strong className={styles.header}>Health labels</strong>
+            <strong className={styles.header}>Health labels (optional)</strong>
             <ul className={styles.list}>
               {healthLabels.map(({ title, value, description }) => (
                 <li key={value}>
@@ -40,7 +40,7 @@ const LabelsPrompt = ({ handleSubmit, values }) => {
           </section>
 
           <section>
-            <strong className={styles.header}>Diet labels</strong>
+            <strong className={styles.header}>Diet labels (optional)</strong>
             <ul className={styles.list}>
               {dietLabels.map(({ title, value, description }) => (
                 <li key={value}>

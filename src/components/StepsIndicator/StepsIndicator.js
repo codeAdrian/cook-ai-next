@@ -5,6 +5,7 @@ import styles from './StepsIndicator.module.css'
 const StepsIndicator = ({ maxSteps, currentStep, onClick }) => {
   return (
     <header className={styles.wrapper}>
+      <h1 className={styles.title}>CookAI&apos;s Recipe Magic</h1>
       <nav className={styles.inner}>
         <ul className={styles.list}>
           {[...new Array(maxSteps)].map((_, i) => (

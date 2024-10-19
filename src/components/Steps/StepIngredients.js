@@ -22,20 +22,18 @@ const StepIngredients = ({ setCurrentStep, setValues, values }) => {
         mascot={(setShowContent) => (
           <CookieMascot>
             <div>
-              <span className="title">That is Egg-cellent, Chef!</span>
+              <div className="title">That is Egg-cellent, Chef!</div>
               <div>
-                Start by adding some <strong>ingredients</strong> which
-                I&apos;ll use to create an amazin&apos; recipe for ya. Also, let
-                me know how many <strong>extra ingredients</strong> should I use
-                that aren&apos;t on the list. Let&apos;s just call it my
+                Next, let&apos;s add a few <strong>ingredients</strong> which
+                will help me create an amazin&apos; recipe for ya. Also, let me
+                know how many <strong>additional ingredients</strong> should I
+                use that aren&apos;t on yer list. Let&apos;s just call it my
                 personal touch, capiche? Make sure to add{' '}
                 <strong>at least three</strong> ingredients. Anything less and
                 you&apos;d be pullin&apos; my leg.
               </div>
             </div>
-            <Button onClick={setShowContent}>
-              Sounds good, let&apos;s roll!
-            </Button>
+            <Button onClick={setShowContent}>Got it, buddy!</Button>
           </CookieMascot>
         )}
       >

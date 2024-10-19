@@ -23,22 +23,20 @@ const StepLabels = ({ setValues, setCurrentStep, values }) => {
   return (
     <li>
       <ContentWithMascot
-        hideMascot={
-          Boolean(
-            values.current.healthLabels.length ||
-              values.current.dietLabels.length
-          ) || Boolean(values.current.ingredients)
-        }
+        hideMascot={Boolean(
+          values.current.healthLabels.length || values.current.dietLabels.length
+        )}
         mascot={(showContent) => (
           <CookieMascot>
             <div>
-              <span className="title">We&apos;re on a roll, Chef!</span>
+              <div className="title">We&apos;re on a roll, Chef!</div>
               <div>
                 Let&apos;s talk about any{' '}
                 <strong>dietary or health preferences</strong> I should know
-                about before I start comin&apos; up with a recipe. I donut want
-                to create aything less than perfect, see? Let me know when yer
-                done and I&apos;ll start cookin&apos; up a recipe for ya.
+                about. Any cook worth their salt should keep that in mind. I
+                donut want to create aything less than perfect, see? Let me know
+                when yer done and I&apos;ll start cookin&apos; up a recipe for
+                ya.
               </div>
             </div>
             <Button onClick={showContent}>Got it, buddy!</Button>
