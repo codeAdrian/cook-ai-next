@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Button } from '../Button'
 import Suggestions from './Suggestions'
 
@@ -11,6 +11,7 @@ const INGREDIENTS_LIMIT = 10
 
 const IngredientsPrompt = ({ handleSubmit, values }) => {
   const [search, setSearch] = useState('')
+  const inputRef = useRef()
   const [numberOfExtras, setNumberOfExtras] = useState(
     values.current.extraIngredients || 5
   )
@@ -29,6 +30,7 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
 
     setIngredients((v) => [...v, value])
     setSearch('')
+    inputRef.current.focus()
   }
 
   const removeIngredientFromList = (index) => {
@@ -41,8 +43,8 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
     if (search.length < 3 || ingredients.length >= INGREDIENTS_LIMIT) {
       return
     }
-
     addIngredientToList(search)
+    inputRef.current.focus()
   }
 
   return (
@@ -58,6 +60,7 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
             className={styles.form}
           >
             <Input
+              inputRef={inputRef}
               maxLength={25}
               placeholder="Cream cheese"
               type="text"

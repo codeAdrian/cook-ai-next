@@ -4,6 +4,10 @@ export const dishTypeOptions = [
     value: '',
   },
   {
+    title: 'Appetizer',
+    value: 'appetizer',
+  },
+  {
     title: 'Lunch',
     value: 'lunch',
   },
@@ -30,6 +34,10 @@ export const dishTypeOptions = [
   {
     title: 'Pizza',
     value: 'pizza',
+  },
+  {
+    title: 'Curry',
+    value: 'curry',
   },
   {
     title: 'Pasta',

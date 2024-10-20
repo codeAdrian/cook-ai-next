@@ -25,6 +25,13 @@
   }
 
   & :global(.formatted) {
+    width: 100%;
+
+    @media not print {
+      max-height: clamp(20rem, 30vh, 100rem);
+      overflow-y: auto;
+    }
+
     & p {
       margin-top: 1.25rem;
       margin-bottom: 0.75rem;

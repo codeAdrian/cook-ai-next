@@ -5,6 +5,7 @@ const PROMPT_STATE = {
   init: 'init',
   idle: 'idle',
   loading: 'loading',
+  inProgress: 'inProgress',
   success: 'success',
   error: 'error',
 }
@@ -25,10 +26,13 @@ export const usePromptModel = () => {
 
     try {
       const stream = await lmSession.promptStreaming(prompt)
+      setPromptState(PROMPT_STATE.inProgress)
+
       for await (const chunk of stream) {
         callback(chunk.trim())
-        setPromptState(PROMPT_STATE.success)
       }
+
+      setPromptState(PROMPT_STATE.success)
     } catch (error) {
       setError(error.message)
       setPromptState(PROMPT_STATE.error)
@@ -45,7 +49,7 @@ export const usePromptModel = () => {
     }
 
     setPromptState(PROMPT_STATE.idle)
-  }, [lmSession, promptState])
+  }, [lmSession])
 
   return { promptModel, promptState, error }
 }

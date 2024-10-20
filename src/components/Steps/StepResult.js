@@ -1,27 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { CookieMascot } from '../CookieMascot'
 import { Recipe } from '../Recipe'
 import { createPrompt } from '@/utils/createPrompt'
-import { Button } from '../Button'
+import dynamic from 'next/dynamic'
 
-const StepResult = ({ promptModel, values }) => {
+const RecipeControls = dynamic(
+  () => import('../RecipeControls/RecipeControls'),
+  {
+    ssr: false,
+  }
+)
+
+const StepResult = ({ promptModel, values, ...props }) => {
+  const recipeRef = useRef()
   const [response, setResponse] = useState('')
-  const onPrint = () => window.print()
+  const isDisabled = props.promptState !== 'success'
+
+  const runQuery = () => {
+    promptModel(createPrompt(values.current), setResponse)
+  }
+
+  useEffect(runQuery, [])
 
   useEffect(() => {
-    promptModel(createPrompt(values.current), setResponse)
-  }, [])
+    if (!response) {
+      return
+    }
+
+    recipeRef.current.scrollTop = recipeRef.current.scrollHeight
+  }, [response])
 
   return (
     <li>
-      <div>
-        <Button type="button" onClick={onPrint}>
-          Print
-        </Button>
-        <Button>Edit ingredients</Button>
-      </div>
-      <CookieMascot mood="happy">
-        <div className="formatted">
+      <RecipeControls {...props} runQuery={runQuery} isDisabled={isDisabled} />
+      <CookieMascot mood={isDisabled ? 'idle' : 'happy'}>
+        <div ref={recipeRef} className="formatted">
           {response ? (
             <Recipe response={response} />
           ) : (

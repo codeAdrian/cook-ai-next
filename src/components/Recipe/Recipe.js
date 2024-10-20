@@ -4,7 +4,7 @@ import styles from './Recipe.module.css'
 import DOMPurify from 'dompurify'
 import { marked } from 'marked'
 
-const Recipe = ({ response, isEditMode }) => {
+const Recipe = ({ response }) => {
   return (
     <div
       className={styles.recipe}

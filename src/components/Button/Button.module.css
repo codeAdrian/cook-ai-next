@@ -9,6 +9,9 @@
   border-radius: 2rem;
   line-height: 1;
   user-select: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
   &:disabled {
     pointer-events: none;
@@ -16,7 +19,7 @@
     cursor: not-allowed;
   }
 
-  & span {
+  & > span {
     position: relative;
     z-index: 1;
   }
