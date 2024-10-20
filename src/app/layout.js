@@ -8,7 +8,8 @@ import { Metadata } from 'next'
 
 export const metadata = {
   title: `CookAI's Recipe Magic`,
-  description: 'TODO',
+  description:
+    'We provide delicious inspiration, fresh ideas, and turn your leftover food into recipes for yummy dishes and snacks.',
   metadataBase: new URL('https://cook-ai-next.vercel.app'),
 }
 

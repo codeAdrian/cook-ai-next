@@ -26,9 +26,9 @@ const StepIntro = (props) => {
               <div>
                 Rice to meet ya! My name is <strong>CookAI</strong>. Looking for
                 a delicious inspiration, fresh ideas or just want to turn yer
-                leftovers into yummy dishes or snacks? I&apos;m yer buddy.
-                Let&apos;s start by selecting the type of dish you want us to
-                create.
+                leftovers into recipes for yummy dishes or snacks? I&apos;m yer
+                buddy. Let&apos;s start by selecting the type of dish you want
+                us to create.
               </div>
             </div>
 
