@@ -4,7 +4,6 @@ import { Button } from '../Button'
 import styles from './IngredientsPrompt.module.css'
 import { Input } from '../Input'
 import SelectedIngredients from './SelectedIngredients'
-import { RangeInput } from '../RangeInput'
 
 import dynamic from 'next/dynamic'
 import { SkeletonLoader } from '../SkeletonLoader'
@@ -12,6 +11,11 @@ import { SkeletonLoader } from '../SkeletonLoader'
 const Suggestions = dynamic(() => import('./Suggestions'), {
   ssr: false,
   loading: () => <SkeletonLoader style={{ height: '112px' }} />,
+})
+
+const RangeInput = dynamic(() => import('../RangeInput/RangeInput'), {
+  ssr: false,
+  loading: () => <SkeletonLoader style={{ height: '4px' }} />,
 })
 
 const INGREDIENTS_LIMIT = 10

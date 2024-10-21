@@ -42,13 +42,15 @@ const Steps = () => {
 
   if (error) {
     return (
-      <StepError>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(error),
-          }}
-        />
-      </StepError>
+      <div className={styles.list}>
+        <StepError>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(error),
+            }}
+          />
+        </StepError>
+      </div>
     )
   }
 
@@ -61,12 +63,12 @@ const Steps = () => {
       />
 
       <ul
+        role="list"
         className={
           currentStep === stepComponents.length - 1
             ? styles.listWide
             : styles.list
         }
-        role="list"
       >
         <CurrentStep
           values={formValues}
