@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <div className="stretch-and-center">
+    <div className="wrapper">
       <CookieMascot mood="concerned">
         <div>
           <div className="title">
