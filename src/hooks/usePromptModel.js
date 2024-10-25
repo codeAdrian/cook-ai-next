@@ -16,13 +16,12 @@ export const usePromptModel = () => {
   const [error, setError] = useState('')
 
   const promptModel = async (value, callback) => {
+    setPromptState(PROMPT_STATE.loading)
     const prompt = value.trim()
 
     if (!prompt || typeof lmSession !== 'object') {
       return
     }
-
-    setPromptState(PROMPT_STATE.loading)
 
     try {
       const stream = await lmSession.promptStreaming(prompt)

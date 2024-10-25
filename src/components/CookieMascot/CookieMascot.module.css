@@ -90,6 +90,7 @@
 
 .happy {
   composes: mascot;
+  cursor: pointer;
   animation: jump 3s 3s ease-in-out infinite alternate;
 
   & :global(.cookie_svg__mouth-concern),

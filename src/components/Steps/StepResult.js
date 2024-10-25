@@ -3,6 +3,7 @@ import { CookieMascot } from '../CookieMascot'
 import { Recipe } from '../Recipe'
 import { createPrompt } from '@/utils/createPrompt'
 import dynamic from 'next/dynamic'
+import { triggerEmojiBlast } from '@/utils/triggerEmojiBlast'
 
 const RecipeControls = dynamic(
   () => import('../RecipeControls/RecipeControls'),
@@ -23,6 +24,14 @@ const StepResult = ({ promptModel, values, ...props }) => {
   useEffect(runQuery, [])
 
   useEffect(() => {
+    if (isDisabled || !response) {
+      return
+    }
+
+    triggerEmojiBlast()
+  }, [isDisabled, response])
+
+  useEffect(() => {
     if (!response) {
       return
     }
@@ -33,7 +42,10 @@ const StepResult = ({ promptModel, values, ...props }) => {
   return (
     <li>
       <RecipeControls {...props} runQuery={runQuery} isDisabled={isDisabled} />
-      <CookieMascot mood={isDisabled ? 'idle' : 'happy'}>
+      <CookieMascot
+        onClick={() => !isDisabled && triggerEmojiBlast()}
+        mood={isDisabled ? 'idle' : 'happy'}
+      >
         <div ref={recipeRef} className="formatted">
           {response ? (
             <Recipe response={response} />
