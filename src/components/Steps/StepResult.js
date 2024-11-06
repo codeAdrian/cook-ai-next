@@ -3,7 +3,9 @@ import { CookieMascot } from '../CookieMascot'
 import { Recipe } from '../Recipe'
 import { createPrompt } from '@/utils/createPrompt'
 import dynamic from 'next/dynamic'
-import { triggerEmojiBlast } from '@/utils/triggerEmojiBlast'
+
+import { RecipeButtons } from '../RecipeButtons'
+import { PROMPT_STATE } from '@/constants/promptState'
 
 const RecipeControls = dynamic(
   () => import('../RecipeControls/RecipeControls'),
@@ -13,12 +15,23 @@ const RecipeControls = dynamic(
 )
 
 const StepResult = ({ promptModel, values, ...props }) => {
+  const [isEditMode, setIsEditMode] = useState(false)
   const recipeRef = useRef()
+  const contentRef = useRef()
   const [response, setResponse] = useState('')
-  const isDisabled = props.promptState !== 'success'
+  const isDisabled = props.promptState !== PROMPT_STATE.success
+
+  const handleSuccess = () =>
+    import('../../utils/triggerEmojiBlast.js').then(({ triggerEmojiBlast }) =>
+      triggerEmojiBlast()
+    )
 
   const runQuery = () => {
+    setIsEditMode(false)
     promptModel(createPrompt(values.current), setResponse)
+
+    // Preload emoji-blast module while Gemini is processing the query
+    import('../../utils/triggerEmojiBlast.js')
   }
 
   useEffect(runQuery, [])
@@ -28,7 +41,7 @@ const StepResult = ({ promptModel, values, ...props }) => {
       return
     }
 
-    triggerEmojiBlast()
+    handleSuccess()
   }, [isDisabled, response])
 
   useEffect(() => {
@@ -39,16 +52,35 @@ const StepResult = ({ promptModel, values, ...props }) => {
     recipeRef.current.scrollTop = recipeRef.current.scrollHeight
   }, [response])
 
+  const toggleEditMode = () => setIsEditMode((v) => !v)
+
+  useEffect(() => {
+    if (!isEditMode || !contentRef.current || !response || isDisabled) {
+      return
+    }
+
+    contentRef.current?.focus()
+  }, [isEditMode])
+
   return (
     <li>
       <RecipeControls {...props} runQuery={runQuery} isDisabled={isDisabled} />
+      <RecipeButtons
+        toggleEditMode={toggleEditMode}
+        isDisabled={isDisabled}
+        isEditMode={isEditMode}
+      />
       <CookieMascot
-        onClick={() => !isDisabled && triggerEmojiBlast()}
+        onClick={() => !isDisabled && handleSuccess()}
         mood={isDisabled ? 'idle' : 'happy'}
       >
         <div ref={recipeRef} className="formatted">
           {response ? (
-            <Recipe response={response} />
+            <Recipe
+              contentRef={contentRef}
+              isEditMode={isEditMode}
+              response={response}
+            />
           ) : (
             <>
               <div className="title">

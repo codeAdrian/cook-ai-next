@@ -40,7 +40,7 @@
 .label {
   cursor: pointer;
   display: inline-flex;
-  align-items: baseline;
+  align-items: flex-start;
   flex-wrap: nowrap;
   gap: 0.5rem;
   user-select: none;

@@ -13,6 +13,7 @@
   & button {
     font-size: var(--step--1);
     padding: 0.2rem 1rem;
+    font-weight: var(--font-weight__normal);
   }
 }
 
@@ -23,4 +24,5 @@
 
 .empty {
   color: var(--color__gray--light);
+  font-size: var(--step--1);
 }

@@ -29,7 +29,7 @@
   text-align: center;
   width: 100%;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: var(--font-weight__bold);
   color: var(--color__gray--lightest);
   font-size: var(--step--1);
 }

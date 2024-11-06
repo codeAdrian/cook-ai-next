@@ -10,6 +10,9 @@
   gap: 1.25rem;
   width: 100%;
   word-break: break-word;
+  opacity: 0;
+  transform-origin: bottom;
+  animation: reveal 0.4s 0.02s ease-in-out forwards;
 
   & :global(.title) {
     font-family: var(--font-cursive);
@@ -57,5 +60,17 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

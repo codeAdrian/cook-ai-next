@@ -4,7 +4,6 @@ import './globals.css'
 import { Lobster, Outfit } from 'next/font/google'
 import { Footer } from '@/components/Footer'
 import { PromptModelContextProvider } from '@/contexts/PromptModelContext'
-import { Metadata } from 'next'
 
 export const metadata = {
   title: `CookAI's Recipe Magic`,
@@ -15,7 +14,7 @@ export const metadata = {
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '800'],
+  weight: ['400', '600', '700'],
   variable: '--font-primary',
 })
 const lobster = Lobster({

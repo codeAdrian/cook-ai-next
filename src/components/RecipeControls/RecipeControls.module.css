@@ -4,7 +4,7 @@
   justify-content: space-around;
   position: fixed;
   right: -1rem;
-  transform: translateX(100%) translateY(-100%);
+  transform: translateX(100%) translateY(-50%);
   animation: fromRight 0.4s ease-out forwards;
   top: 50%;
 
@@ -22,7 +22,7 @@
   padding: 1rem 1rem 1rem 0.75rem;
   background-color: var(--color__gray--lightest);
   border: 0.4rem solid var(--color__tertiary);
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   gap: 1rem;
   flex-direction: column;
 
@@ -49,9 +49,9 @@
 
 @keyframes fromRight {
   from {
-    transform: translateX(100%) translateY(-100%);
+    transform: translateX(100%) translateY(-50%);
   }
   to {
-    transform: translateX(0) translateY(-100%);
+    transform: translateX(0) translateY(-50%);
   }
 }

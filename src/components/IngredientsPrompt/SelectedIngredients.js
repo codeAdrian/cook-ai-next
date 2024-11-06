@@ -37,7 +37,8 @@ const SelectedIngredients = ({
             ))
           ) : (
             <li className={styles.empty}>
-              Your selected ingredients will appear here
+              Your selected ingredients will appear here. Select{' '}
+              <strong>at least 3</strong> ingredients.
             </li>
           )}
         </ul>

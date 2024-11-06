@@ -1,14 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLanguageModelSession } from './useLanguageModelSession'
-
-const PROMPT_STATE = {
-  init: 'init',
-  idle: 'idle',
-  loading: 'loading',
-  inProgress: 'inProgress',
-  success: 'success',
-  error: 'error',
-}
+import { PROMPT_STATE } from '@/constants/promptState'
 
 export const usePromptModel = () => {
   const lmSession = useLanguageModelSession()

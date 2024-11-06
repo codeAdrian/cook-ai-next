@@ -25,14 +25,13 @@
   cursor: pointer;
   user-select: none;
 
+  &:has(input:focus-visible) {
+    box-shadow: 0 0 0.2rem 0.1rem var(--color__gray--darker);
+  }
+
   &:has(input:checked) {
     background: var(--color__gradient--cta);
     color: var(--color__gray--lightest);
     border-color: var(--color__gray--lightest);
   }
-}
-
-.input {
-  visibility: hidden;
-  position: absolute;
 }

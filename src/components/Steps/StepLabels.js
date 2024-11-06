@@ -35,8 +35,8 @@ const StepLabels = ({ setValues, setCurrentStep, values }) => {
                 <strong>dietary or health preferences</strong> I should know
                 about. Any cook worth their salt should keep that in mind. I
                 donut want to create aything less than perfect, see? Let me know
-                when yer done and I&apos;ll start cookin&apos; up a recipe for
-                ya.
+                when you&apos;re done and I&apos;ll start cookin&apos; up a
+                recipe for ya.
               </div>
             </div>
             <Button onClick={showContent}>Got it, buddy!</Button>

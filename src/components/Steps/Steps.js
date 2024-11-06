@@ -28,7 +28,7 @@ const Steps = () => {
   const formValues = useRef({
     dishType: dishTypeOptions[0].value,
     ingredients: '',
-    extraIngredients: 5,
+    extraIngredients: 3,
     healthLabels: [],
     dietLabels: [],
   })

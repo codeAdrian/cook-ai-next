@@ -12,7 +12,9 @@ const StepError = ({ children }) => {
           </div>
           {children}
         </div>
-        <Button onClick={() => window.location.reload()}>Try again</Button>
+        <Button onClick={() => window.location.reload()}>
+          Don&apos;t worry, let&apos;s try again.
+        </Button>
       </CookieMascot>
     )
   }

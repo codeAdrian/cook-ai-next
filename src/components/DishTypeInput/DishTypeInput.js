@@ -9,7 +9,9 @@ const DishTypeInput = ({ values, onSubmit }) => {
   return (
     <form autoComplete="false" onSubmit={onSubmit}>
       <article className={styles.wrapper}>
-        I want to create
+        <label>
+          <strong>Select a dish type (optional)</strong>
+        </label>
         <ul className={styles.list}>
           {dishTypeOptions.map(({ title, value }, i) => (
             <li key={value} className={styles.item}>
@@ -19,7 +21,7 @@ const DishTypeInput = ({ values, onSubmit }) => {
                   defaultChecked={values.current.dishType === value}
                   name="dish-type"
                   value={value}
-                  className={styles.input}
+                  className="sr-only"
                   type="radio"
                 />
               </label>

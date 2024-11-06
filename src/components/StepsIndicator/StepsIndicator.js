@@ -25,7 +25,9 @@ const StepsIndicator = ({ maxSteps, currentStep, onClick }) => {
                 }
                 onClick={onClick}
               >
-                <span className="sr-only">Step {i + 1}</span>
+                <span className="sr-only">
+                  Step {i + 1} of {maxSteps}
+                </span>
               </button>
             </li>
           ))}

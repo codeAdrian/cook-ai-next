@@ -7,6 +7,7 @@ import SelectedIngredients from './SelectedIngredients'
 
 import dynamic from 'next/dynamic'
 import { SkeletonLoader } from '../SkeletonLoader'
+import { Plus } from 'lucide-react'
 
 const Suggestions = dynamic(() => import('./Suggestions'), {
   ssr: false,
@@ -18,13 +19,13 @@ const RangeInput = dynamic(() => import('../RangeInput/RangeInput'), {
   loading: () => <SkeletonLoader style={{ height: '4px' }} />,
 })
 
-const INGREDIENTS_LIMIT = 10
+const INGREDIENTS_LIMIT = 12
 
 const IngredientsPrompt = ({ handleSubmit, values }) => {
   const [search, setSearch] = useState('')
   const inputRef = useRef()
   const [numberOfExtras, setNumberOfExtras] = useState(
-    values.current.extraIngredients || 5
+    values.current.extraIngredients || 3
   )
   const [ingredients, setIngredients] = useState(
     values.current.ingredients ? values.current.ingredients.split(', ') : []
@@ -46,6 +47,7 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
 
   const removeIngredientFromList = (index) => {
     setIngredients((list) => list.filter((_, i) => i !== index))
+    inputRef.current.focus()
   }
 
   const handleAddManual = (e) => {
@@ -63,7 +65,9 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
       <div className={styles.grid}>
         <section className={styles.section}>
           <div>
-            <label htmlFor="input-ingredient">Add ingredient to the list</label>
+            <label htmlFor="input-ingredient">
+              <strong>Add ingredient to the list</strong>
+            </label>
           </div>
           <form
             onSubmit={handleAddManual}
@@ -73,13 +77,16 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
             <Input
               inputRef={inputRef}
               maxLength={25}
-              placeholder="Cream cheese"
+              placeholder="E.g. Sweet potato"
               type="text"
               id="input-ingredient"
               value={search}
               onChange={handleSearch}
             />
-            <Button type="submit">+</Button>
+            <Button type="submit">
+              <span className="sr-only">Add ingredient</span>
+              <Plus width={24} height={24} strokeWidth={3} />
+            </Button>
           </form>
           <Suggestions
             addIngredientToList={addIngredientToList}
@@ -97,7 +104,9 @@ const IngredientsPrompt = ({ handleSubmit, values }) => {
       </div>
 
       <section className={styles.section}>
-        <label>Additional ingredients</label>
+        <label>
+          <strong>Additional ingredients (optional)</strong>
+        </label>
         <RangeInput value={numberOfExtras} setValue={setNumberOfExtras} />
       </section>
 

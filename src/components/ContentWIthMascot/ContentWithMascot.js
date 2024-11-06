@@ -11,7 +11,7 @@ const ContentWithMascot = ({ mascot, children, hideMascot = false }) => {
     return <>{mascot(showContent)}</>
   }
 
-  return <>{children}</>
+  return <div className="step-content">{children}</div>
 }
 
 export default ContentWithMascot

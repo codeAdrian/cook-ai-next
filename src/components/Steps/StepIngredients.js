@@ -25,12 +25,12 @@ const StepIngredients = ({ setCurrentStep, setValues, values }) => {
               <div className="title">That is Egg-cellent, Chef!</div>
               <div>
                 Next, let&apos;s add a few <strong>ingredients</strong> which
-                will help me create an amazin&apos; recipe for ya. Also, let me
+                will help me create an awesomesauce recipe for ya. Also, let me
                 know how many <strong>additional ingredients</strong> should I
                 use that aren&apos;t on yer list. Let&apos;s just call it my
                 personal touch, capiche? Make sure to add{' '}
                 <strong>at least three</strong> ingredients. Anything less and
-                you&apos;d be pullin&apos; my leg.
+                you&apos;d just be pullin&apos; my leg.
               </div>
             </div>
             <Button onClick={setShowContent}>Got it, buddy!</Button>

@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './LabelsPrompt.module.css'
 import { dietLabels, healthLabels } from '@/constants/labelOptions'
 import { Button } from '../Button'
+import { Toggle } from '../Toggle'
 
 const LabelsPrompt = ({ handleSubmit, values }) => {
   return (
@@ -19,10 +20,9 @@ const LabelsPrompt = ({ handleSubmit, values }) => {
               {healthLabels.map(({ title, value, description }) => (
                 <li key={value}>
                   <label className={styles.label}>
-                    <input
+                    <Toggle
                       name="health"
                       value={value}
-                      type="checkbox"
                       defaultChecked={values.current.healthLabels.includes(
                         value
                       )}
@@ -45,10 +45,9 @@ const LabelsPrompt = ({ handleSubmit, values }) => {
               {dietLabels.map(({ title, value, description }) => (
                 <li key={value}>
                   <label className={styles.label}>
-                    <input
+                    <Toggle
                       name="diet"
                       value={value}
-                      type="checkbox"
                       defaultChecked={values.current.dietLabels.includes(value)}
                     />
                     <div className={styles.content}>
@@ -67,7 +66,7 @@ const LabelsPrompt = ({ handleSubmit, values }) => {
 
       <div>
         <Button style={{ width: '100%' }} variant="cta" type="submit">
-          Save and start creating a recipe
+          Save and create a recipe
         </Button>
       </div>
     </form>

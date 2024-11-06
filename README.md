@@ -36,3 +36,11 @@ npm run build
 [Cook AI's Recipe Magic](https://cook-ai-next.vercel.app/)
 
 [Demo video](https://youtu.be/CbxHGCpzHi0?si=FU2OAvqr8QurXMae)
+
+## Social media
+
+[Twitter](https://x.com/AdrianBeceDev)
+
+[LinkedIn](https://www.linkedin.com/in/adrianbece/)
+
+[Bluesky](https://bsky.app/profile/adrianbecedev.bsky.social)
