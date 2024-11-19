@@ -35,7 +35,7 @@ npm run build
 
 [Cook AI's Recipe Magic](https://cook-ai-next.vercel.app/)
 
-[Demo video](https://www.youtube.com/watch?v=NtWQ6JD4Hk8)
+[Demo video](https://youtu.be/sNPnSxbFZqo)
 
 ## Social media
 
