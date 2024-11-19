@@ -1,6 +1,6 @@
 export const dishTypeOptions = [
   {
-    title: 'Anything (suprise me)',
+    title: 'Suprise me',
     value: '',
   },
   {
@@ -8,20 +8,28 @@ export const dishTypeOptions = [
     value: 'appetizer',
   },
   {
-    title: 'Lunch',
-    value: 'lunch',
-  },
-  {
     title: 'Breakfast',
     value: 'breakfast',
   },
   {
-    title: 'Snack',
-    value: 'snack',
+    title: 'Lunch',
+    value: 'lunch',
+  },
+  {
+    title: 'Brunch',
+    value: 'brunch',
   },
   {
     title: 'Dessert',
     value: 'dessert',
+  },
+  {
+    title: 'Soup',
+    value: 'soup',
+  },
+  {
+    title: 'Snack',
+    value: 'snack',
   },
   {
     title: 'Sandwich',
@@ -34,6 +42,26 @@ export const dishTypeOptions = [
   {
     title: 'Pizza',
     value: 'pizza',
+  },
+  {
+    title: 'Stew',
+    value: 'stew',
+  },
+  {
+    title: 'Cake',
+    value: 'cake',
+  },
+  {
+    title: 'Pie',
+    value: 'pie',
+  },
+  {
+    title: 'Sushi',
+    value: 'sushi',
+  },
+  {
+    title: 'Dip',
+    value: 'dip',
   },
   {
     title: 'Curry',

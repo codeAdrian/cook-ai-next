@@ -14,5 +14,9 @@ export const createPrompt = ({
     dishType = `${dishType} `
   }
 
-  return `Create a new ${dishType}recipe that contains some or all of the following ingredients: ${ingredients}. ${labels}Use up to ${extraIngredients} additional ingredients that are not on the list. List the additional ingredients that are not on the ingredients list. Include link to Walmart's webshop search results to additional ingredients.`
+  const total = ingredients.split(',').length + parseInt(extraIngredients)
+
+  const prompt = `Create a new ${dishType}recipe using most or, ideally, all of the following ingredients: ${ingredients}. ${labels}You are allowed to add ${extraIngredients} additional ingredients that are not on the list, but the total number of ingredients in the recipe should not exceed ${total}. Create a list of the additional ingredients used, along with a link to Walmart's webshop search results for additional ingredients that I need to buy.`
+
+  return prompt
 }

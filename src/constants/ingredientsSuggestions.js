@@ -53,7 +53,7 @@ export const ingredientsSuggesions = [
   'lemons',
   'limes',
   'mango',
-  'melons',
+  'melon',
   'milk',
   'mushrooms',
   'navy beans',
