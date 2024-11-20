@@ -1,6 +1,6 @@
 # CookAI's Recipe Magic
 
-Delightful app that transforms leftovers into delicious dishes or snacks, and helps you find new recipes tailored to your preferences, including dish type, ingredients, dietary needs, and more!
+Delightful app that helps turn your leftovers into delicious dishes and reduce food waste by finding recipes tailored to your preferences, including dish type, ingredients, dietary needs, and more!
 
 Built using Next.js and Gemini Nano Prompt API
 
