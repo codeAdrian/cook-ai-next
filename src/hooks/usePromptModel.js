@@ -6,6 +6,8 @@ export const usePromptModel = () => {
   const lmSession = useLanguageModelSession()
   const [promptState, setPromptState] = useState(PROMPT_STATE.init)
   const [error, setError] = useState('')
+  let result = ''
+  let previousChunk = ''
 
   const promptModel = async (value, callback) => {
     setPromptState(PROMPT_STATE.loading)
@@ -20,7 +22,12 @@ export const usePromptModel = () => {
       setPromptState(PROMPT_STATE.inProgress)
 
       for await (const chunk of stream) {
-        callback(chunk.trim())
+        const newChunk = chunk.startsWith(previousChunk)
+          ? chunk.slice(previousChunk.length)
+          : chunk
+        result += newChunk
+        callback(result)
+        previousChunk = chunk
       }
 
       setPromptState(PROMPT_STATE.success)
