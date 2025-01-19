@@ -1,12 +1,12 @@
 'use client'
 
-import { usePromptModel } from '@/hooks/usePromptModel'
+import useRecipeGenerator from '@/hooks/useRecipeGenerator'
 import { createContext, useContext, memo } from 'react'
 
 const PromptModelContext = createContext({})
 
 const PromptModelContextComponent = ({ children }) => {
-  const value = usePromptModel()
+  const value = useRecipeGenerator()
 
   return (
     <PromptModelContext.Provider value={value}>

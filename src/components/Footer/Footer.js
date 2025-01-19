@@ -23,16 +23,7 @@ const Footer = () => {
           href="https://x.com/AdrianBeceDev"
         >
           Adrian Bece
-        </a>{' '}
-        with{' '}
-        <a
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://deepmind.google/technologies/gemini/nano/"
-        >
-          Gemini Nano&apos;s
-        </a>{' '}
-        Prompt API
+        </a>
       </div>
 
       <div className={styles.links}>

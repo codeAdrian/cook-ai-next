@@ -20,12 +20,24 @@ export const dishTypeOptions = [
     value: 'brunch',
   },
   {
+    title: 'Dinner',
+    value: 'dinner',
+  },
+  {
     title: 'Dessert',
     value: 'dessert',
   },
   {
     title: 'Soup',
     value: 'soup',
+  },
+  {
+    title: 'Stew',
+    value: 'stew',
+  },
+  {
+    title: 'Chowder',
+    value: 'chowder',
   },
   {
     title: 'Snack',
@@ -36,6 +48,10 @@ export const dishTypeOptions = [
     value: 'sandwich',
   },
   {
+    title: 'Wrap',
+    value: 'wrap',
+  },
+  {
     title: 'Burger',
     value: 'burger',
   },
@@ -44,8 +60,48 @@ export const dishTypeOptions = [
     value: 'pizza',
   },
   {
-    title: 'Stew',
-    value: 'stew',
+    title: 'Pasta',
+    value: 'pasta',
+  },
+  {
+    title: 'Stir Fry',
+    value: 'stir-fry',
+  },
+  {
+    title: 'Curry',
+    value: 'curry',
+  },
+  {
+    title: 'Casserole',
+    value: 'casserole',
+  },
+  {
+    title: 'Roast',
+    value: 'roast',
+  },
+  {
+    title: 'Grill',
+    value: 'grill',
+  },
+  {
+    title: 'BBQ',
+    value: 'bbq',
+  },
+  {
+    title: 'Salad',
+    value: 'salad',
+  },
+  {
+    title: 'Bowl',
+    value: 'bowl',
+  },
+  {
+    title: 'Sushi',
+    value: 'sushi',
+  },
+  {
+    title: 'Seafood',
+    value: 'seafood',
   },
   {
     title: 'Cake',
@@ -56,27 +112,27 @@ export const dishTypeOptions = [
     value: 'pie',
   },
   {
-    title: 'Sushi',
-    value: 'sushi',
+    title: 'Cookies',
+    value: 'cookies',
+  },
+  {
+    title: 'Pastry',
+    value: 'pastry',
   },
   {
     title: 'Dip',
     value: 'dip',
   },
   {
-    title: 'Curry',
-    value: 'curry',
-  },
-  {
-    title: 'Pasta',
-    value: 'pasta',
-  },
-  {
-    title: 'Salad',
-    value: 'salad',
+    title: 'Sauce',
+    value: 'sauce',
   },
   {
     title: 'Drink',
     value: 'drink',
+  },
+  {
+    title: 'Smoothie',
+    value: 'smoothie',
   },
 ]

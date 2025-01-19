@@ -1,42 +1,55 @@
-import { hasBrowserAi } from '@/utils/hasBrowserAi'
-import { useCallback, useEffect, useState } from 'react'
+import { useState, useCallback } from 'react'
 
-export const useLanguageModelSession = () => {
-  const [lmSession, setLmSession] = useState()
-  const isSupported = hasBrowserAi()
+const useOpenAI = () => {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  const createSession = useCallback(() => {
-    self.ai?.languageModel
-      .capabilities()
-      .then(({ defaultTopK, maxTopK, defaultTemperature }) =>
-        self.ai?.languageModel.create({
-          temperature: defaultTemperature,
-          topK: defaultTopK,
-          max: maxTopK,
+  const generateCompletion = useCallback(
+    async ({
+      prompt,
+      model = 'gpt-3.5-turbo',
+      maxTokens = 1000,
+      temperature = 0.7,
+    }) => {
+      try {
+        setLoading(true)
+        setError(null)
+
+        const response = await fetch('/api/openai', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            prompt,
+            model,
+            maxTokens,
+            temperature,
+          }),
         })
-      )
-      .then((s) => setLmSession(s))
-  }, [])
 
-  useEffect(() => {
-    if (typeof window === 'undefined' || !isSupported) {
-      return
-    }
+        if (!response.ok) {
+          const error = await response.json()
+          throw new Error(error.error || 'Failed to generate completion')
+        }
 
-    if (!lmSession) {
-      createSession()
-    }
-
-    return () => {
-      if (lmSession) {
-        lmSession.destroy()
+        const data = await response.json()
+        return data.content
+      } catch (err) {
+        setError(err.message)
+        throw err
+      } finally {
+        setLoading(false)
       }
-    }
-  }, [createSession, lmSession, isSupported])
+    },
+    []
+  )
 
-  if (!isSupported) {
-    return `Your browser doesn't support the Prompt API. If you're on Chrome, join the <a href="https://developer.chrome.com/docs/ai/built-in#get_an_early_preview">Early Preview Program</a> to enable it.`
+  return {
+    generateCompletion,
+    loading,
+    error,
   }
-
-  return lmSession
 }
+
+export default useOpenAI
