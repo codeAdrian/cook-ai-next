@@ -7,7 +7,7 @@ const links = [
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/adrianbece/' },
   {
     title: 'Bluesky',
-    url: 'https://bsky.app/profile/adrianbecedev.bsky.social',
+    url: 'https://bsky.app/profile/codeadrian.github.io',
   },
   { title: 'GitHub', url: 'https://github.com/codeAdrian' },
 ]
