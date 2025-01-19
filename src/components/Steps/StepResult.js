@@ -14,48 +14,62 @@ const RecipeControls = dynamic(
   }
 )
 
-const StepResult = ({ promptModel, values, ...props }) => {
+const StepResult = ({
+  generateRecipe,
+  values,
+  promptState,
+  recipe,
+  ...props
+}) => {
   const [isEditMode, setIsEditMode] = useState(false)
   const recipeRef = useRef()
   const contentRef = useRef()
-  const [response, setResponse] = useState('')
-  const isDisabled = props.promptState !== PROMPT_STATE.success
+  const isDisabled = promptState !== PROMPT_STATE.success
 
   const handleSuccess = () =>
     import('../../utils/triggerEmojiBlast.js').then(({ triggerEmojiBlast }) =>
       triggerEmojiBlast()
     )
 
-  const runQuery = () => {
-    setIsEditMode(false)
-    promptModel(createPrompt(values.current), setResponse)
+  const runQuery = async () => {
+    try {
+      setIsEditMode(false)
+      await generateRecipe(values.current)
 
-    // Preload emoji-blast module while Gemini is processing the query
-    import('../../utils/triggerEmojiBlast.js')
+      // Preload emoji-blast module while processing the query
+      import('../../utils/triggerEmojiBlast.js')
+    } catch (error) {
+      console.error('Error generating recipe:', error)
+    }
   }
 
-  useEffect(runQuery, [])
+  useEffect(() => {
+    // IIFE (Immediately Invoked Function Expression) to handle async
+    ;(async () => {
+      await runQuery()
+    })()
+  }, []) // Empty dependency array for initial run only
 
   useEffect(() => {
-    if (isDisabled || !response) {
+    if (isDisabled || !recipe) {
       return
     }
 
     handleSuccess()
-  }, [isDisabled, response])
+  }, [isDisabled, recipe])
 
   useEffect(() => {
-    if (!response) {
+    if (!recipe) {
       return
     }
 
     recipeRef.current.scrollTop = recipeRef.current.scrollHeight
-  }, [response])
+  }, [recipe])
 
   const toggleEditMode = () => setIsEditMode((v) => !v)
 
   useEffect(() => {
-    if (!isEditMode || !contentRef.current || !response || isDisabled) {
+    if (!isEditMode || !contentRef.current || !recipe || isDisabled) {
       return
     }
 
@@ -75,11 +89,11 @@ const StepResult = ({ promptModel, values, ...props }) => {
         mood={isDisabled ? 'idle' : 'happy'}
       >
         <div ref={recipeRef} className="formatted">
-          {response ? (
+          {recipe ? (
             <Recipe
               contentRef={contentRef}
               isEditMode={isEditMode}
-              response={response}
+              response={recipe}
             />
           ) : (
             <>

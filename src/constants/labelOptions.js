@@ -1,45 +1,53 @@
 export const healthLabels = [
   {
     title: 'Vegan',
-    description: 'No meat, poultry, fish, dairy, eggs or honey',
-    value: 'Make it vegan',
+    description: 'No animal products of any kind',
+    value:
+      'Make it strictly vegan - exclude all animal products including meat, dairy, eggs, honey, and animal-derived ingredients',
   },
   {
     title: 'Vegeterian',
-    description: 'No meat, poultry, or fish',
-    value: 'Make it vegeterian',
+    description: 'No meat, but allows dairy and eggs',
+    value:
+      'Make it vegetarian - exclude all meat, poultry, and fish, but allow dairy and eggs',
   },
   {
     title: 'Peanuts-free',
-    description: 'No peanuts or products containing peanuts',
-    value: "Don't use peanuts or products containing peanuts",
+    description: 'Safe for peanut allergies',
+    value:
+      'Make it completely peanut-free - exclude peanuts, peanut oil, peanut butter, and any ingredients that may contain traces of peanuts',
   },
   {
     title: 'Alchohol-free',
-    description: 'No alcohol used or contained',
-    value: "Don't use alchohol or ingredients containing alchohol",
+    description: 'No alcohol in any form',
+    value:
+      'Make it alcohol-free - exclude all alcoholic beverages and cooking ingredients containing alcohol like wine, beer, or liquors',
   },
 ]
 
 export const dietLabels = [
   {
     title: 'High-protein',
-    description: 'More than 50% of total calories from proteins',
-    value: 'Make it high-protein',
+    description: 'Rich in protein (>50% of calories)',
+    value:
+      'Make it high in protein - ensure the recipe contains substantial protein sources and at least 50% of calories come from protein',
   },
   {
     title: 'Low-Carb',
-    description: 'Less than 20% of total calories from carbs',
-    value: 'Make it low-carb',
+    description: 'Limited carbs (<20% of calories)',
+    value:
+      'Make it low-carb - limit carbohydrates to less than 20% of total calories and focus on non-starchy ingredients',
   },
   {
     title: 'Low-fat',
-    description: 'Less than 15% of total calories from fat',
-    value: 'Make it low-fat',
+    description: 'Minimal fats (<15% of calories)',
+    value:
+      'Make it low-fat - keep total fat content below 15% of calories and minimize use of oils and fatty ingredients',
   },
   {
     title: 'Gluten-free',
-    description: 'Excludes foods with protein found in wheat and other grains',
-    value: 'Make it gluten-free',
+    description: 'No wheat, barley, or rye',
+    value:
+      'Make it gluten-free - exclude all wheat, barley, rye, and any ingredients containing gluten. Use only certified gluten-free ingredients where applicable',
   },
 ]

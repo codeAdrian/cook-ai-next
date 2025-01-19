@@ -2,13 +2,11 @@
 
 Delightful app that helps turn your leftovers into delicious dishes and reduce food waste by finding recipes tailored to your preferences, including dish type, ingredients, dietary needs, and more!
 
-Built using Next.js and Gemini Nano Prompt API
-
-![Cook AI's Recipe Magic app created for this hackathon](https://res.cloudinary.com/dazdt97d3/image/upload/f_auto,q_auto/v1/google-ai-hackathon/hhvqb0rnmfeyju2ob4i8)
+![](https://res.cloudinary.com/dazdt97d3/image/upload/f_auto,q_auto/v1/google-ai-hackathon/hhvqb0rnmfeyju2ob4i8)
 
 ## Pre-requisites
 
-- Supported browser (Chrome with Prompt API enabled)
+- Supported browser
 - node version 21
 
 ## Run development build
@@ -34,8 +32,6 @@ npm run build
 ## Demo
 
 [Cook AI's Recipe Magic](https://cook-ai-next.vercel.app/)
-
-[Demo video](https://youtu.be/sNPnSxbFZqo)
 
 ## Social media
 

@@ -7,7 +7,7 @@ const links = [
   { title: 'LinkedIn', url: 'https://www.linkedin.com/in/adrianbece/' },
   {
     title: 'Bluesky',
-    url: 'https://bsky.app/profile/adrianbecedev.bsky.social',
+    url: 'https://bsky.app/profile/codeadrian.github.io',
   },
   { title: 'GitHub', url: 'https://github.com/codeAdrian' },
 ]
@@ -23,16 +23,7 @@ const Footer = () => {
           href="https://x.com/AdrianBeceDev"
         >
           Adrian Bece
-        </a>{' '}
-        with{' '}
-        <a
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://deepmind.google/technologies/gemini/nano/"
-        >
-          Gemini Nano&apos;s
-        </a>{' '}
-        Prompt API
+        </a>
       </div>
 
       <div className={styles.links}>

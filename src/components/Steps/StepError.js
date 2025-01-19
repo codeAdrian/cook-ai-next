@@ -25,12 +25,9 @@ const StepError = ({ children }) => {
         <div className="title">
           Sorry Chef, we&apos;re in a bit of a pickle.
         </div>
-        but yer browser doesn&apos;t support the Prompt API. If you&apos;re on
-        Chrome, join the{' '}
-        <a href="https://developer.chrome.com/docs/ai/built-in#get_an_early_preview">
-          Early Preview Program
-        </a>{' '}
-        to enable it.
+        Your browser might not support all the features we need. Please try
+        using a modern browser like Chrome, Edge, or Safari. If you&apos;re
+        already using Chrome, make sure you&apos;re on the latest version.
       </div>
     </CookieMascot>
   )
