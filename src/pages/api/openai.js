@@ -47,6 +47,36 @@ Instructions:
 `
 
 export default async function handler(req, res) {
+  // Add CORS check at the start of the handler
+  const origin = req.headers.origin
+  const allowedOrigins = [
+    'https://cook-ai-next.vercel.app', // Main production URL
+    /^https:\/\/cook-ai-next-.*\.vercel\.app$/, // Vercel preview deployments
+  ]
+
+  // Only allow localhost in development
+  if (process.env.NODE_ENV === 'development') {
+    allowedOrigins.push('http://localhost:3000')
+  }
+
+  const isAllowedOrigin = allowedOrigins.some((allowed) =>
+    allowed instanceof RegExp ? allowed.test(origin) : allowed === origin
+  )
+
+  if (!isAllowedOrigin) {
+    return res.status(403).json({ error: 'Origin not allowed' })
+  }
+
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', origin)
+  res.setHeader('Access-Control-Allow-Methods', 'POST')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end()
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
